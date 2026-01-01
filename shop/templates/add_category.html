@@ -29,6 +29,16 @@
     </form>    
 </body>
 </html>
+
+
+
+  <h2>product list</h2>
+                    {% for i in product %}
+                    <div>
+                        <b>{{i.name}}</b>{{i.price}}
+                    </div>
+                    {% endfor %}
+                </div>
 {% endcomment %}
 
 
