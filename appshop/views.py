@@ -28,12 +28,9 @@ def add_product(request):
     elif request.method == "POST":
         name = request.POST.get("name")
         price = request.POST.get("price")
-        on_sale = request.POST.get("on_sale")
         id_i = request.POST.get("categorys")
         category_a = Category.objects.get(id=id_i)
 
-        Product.objects.create(
-            name=name, price=price, on_sale=on_sale, category=category_a
-        )
+        Product.objects.create(name=name, price=price, category=category_a)
 
         return render(request, "add_product.html", {"categorys": categorys})
